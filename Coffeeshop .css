@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+:root {
+    --color-dark:                #251c1c;      /* Espresso Dark */
+    --color-less-dark:                #3c2e2e;
+    --color-light:               #F5EFE6;      /* Latte Cream Background */
+    --color-accent:              #7b553a;      /* Medium Brown Accent */
+    --color-text-light:          #f4f4f4;      /* Off-White for Hero */
+    --color-gray:                #6b7280;      /* Standard Gray Text */
+    --max-width:                 1280px;}
+
+
+
+
+
+
+
+
+/* 1.      General Things */
+* {          box-sizing:         border-box;
+             margin:             0;
+             padding:            0; }
+
+body {       font-family:       'Inter', sans-serif;
+             line-height:        1.6;
+             background-color:   var(--color-light);      
+             color:              var(--color-dark); }
+
+.container { max-width:          var(--max-width);
+             margin:             0 auto;
+             padding:            0 1rem; }
+
+
+
+
+
+
+
+
+
+
+/* --- 2. Header & Navigation --- */
+.header {      background-color:    var(--color-dark);
+               color:               var(--color-text-light);
+               position:            sticky; top: 0;z-index: 100;         
+               box-shadow:          0 2px 5px rgba(0, 0, 0, 0.2); }
+
+.navbar {      display:             flex;
+               justify-content:     space-between;
+               align-items:         center;
+               height:              4rem;}
+
+.logo {        font-size:           1.25rem;
+               font-weight:         bold;
+               letter-spacing:      0.1em;}
+
+.logo span {   color:               var(--color-accent);
+               font-size:           0.8rem;
+               margin-left:         0.25rem; 
+               font-weight:         normal;}
+
+.nav-links {   display:             none;
+               gap:                 2rem;}
+
+.nav-links a { color:               var(--color-text-light);
+               text-decoration:     none;
+               transition:          color 0.3s ease;
+               padding:             0.5rem 0;
+               font-size:           0.95rem;}
+
+.nav-button {  background-color:    var(--color-accent);
+               color:               black;
+               padding:             0.35rem 1rem;
+               border-radius:       9999px;
+               text-decoration:     none;
+               box-shadow:          0 2px 4px rgba(0, 0, 0, 0.3);
+               transition:          opacity 0.3s ease, background-color 0.3s ease; }
+
+.nav-links a:hover { color:        var(--color-accent);}
+
+@media (min-width: 768px) {        .nav-links{ display: flex; }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 3. Hero Section --- */
+.hero {             position:            relative;
+                    height:              70vh; /* Responsive height */
+                    display:             flex;
+                    align-items:         center;
+                    background-image:    url("Coffeshop\ hero\ .jpg");
+                    background-size:     cover;
+                    background-position: center; }
+
+.hero-overlay {     position:            absolute;
+                    top:                 0;
+                    left:                0;
+                    right:               0;
+                    bottom:              0;
+                    background:          linear-gradient(90deg, rgba(0, 0, 0, 0.708) 0%, rgba(0, 0, 0, 0.297));
+                    z-index: 1;}
+
+.hero-content {     position:            relative;
+                    z-index:             2;
+                    color:               var(--color-text-light);
+                    padding-left:        1rem;}
+
+.hero-content h1 {  font-size:           3rem;
+                    font-weight:         900;
+                    margin-bottom:       0.5rem;
+                    line-height:         1.1;}
+
+.hero-content p {   font-size:           1.25rem;
+                    max-width:           25rem;
+                    margin-bottom:       1.5rem;
+                    font-weight:         400;}
+
+.hero-buttons a {   display:            inline-block;
+                    text-decoration:     none;
+                    padding:             0.75rem 1.5rem;
+                    border-radius:       0.75rem;
+                    font-weight:         600;
+                    margin-right:        1rem;
+                    transition:          all 0.5s ease;}
+
+.btn-primary {      background-color:    var(--color-accent);
+                    color:               white;
+                    padding:             0.75rem 1.5rem;
+                    border-radius:       2rem;
+                    text-decoration:     none;
+                    box-shadow:          0 4px 6px rgba(0, 0, 0, 0.2);
+                    transition:          all 0.5s ease;}
+
+.btn-secondary {    background-color:    transparent;
+                    color:               var(--color-text-light);
+                    border:              2px solid var(--color-text-light);}
+
+.btn-primary:hover { background-color: #ffffff;color: var(--color-dark);}
+.btn-secondary:hover { background-color: white; color: var(--color-dark);}
+
+@media (min-width: 1024px) {.hero {height: 85vh;} .hero-content h1 { font-size: 5rem;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* --- 4. Featured Section (Why Choose Us) --- */
+.featured-section {
+    padding: 4rem 0;}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;}
+
+@media (min-width: 768px) {
+    .featured-grid {grid-template-columns: 1fr 1fr;}}
+
+.featured-content .tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;}
+
+.featured-content h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin: 0.5rem 0 1rem 0;
+    color: var(--color-dark);}
+
+.featured-content p {
+     color: var(--color-gray);
+    margin-bottom: 1.5rem;}
+
+.featured-content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 0;}
+
+.featured-content li {
+    margin-bottom: 0.5rem;
+    color: var(--color-gray);
+    position: relative;
+    padding-left: 1.5rem;}
+
+.featured-button {  background-color:    var(--color-accent);
+                    color:               white;
+                    padding:             0.75rem 1.5rem;
+                    border-radius:       2rem;
+                    text-decoration:     none;
+                    box-shadow:          0 4px 6px rgba(0, 0, 0, 0.2);
+                    transition:          all 0.5s ease;}
+
+.featured-button:hover { background-color: var(--color-dark);}
+
+.featured-image {position: relative;}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+    display: block;
+    object-fit: cover;}
+
+/* Hover effect on image */
+.featured-image:hover img {transform: scale(1.02);}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 5. Menu Grid --- */
+.menu-section { padding: 4rem 0;
+                background-color: white;
+}
+
+.menu-section h2 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-item {
+    background-color: var(--color-light);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+    color: var(--color-gray);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    min-height: 2.5rem; /* Ensure consistent height */
+}
+
+.menu-item .cta {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+
+/* Special CTA button styling */
+.menu-item .cta-accent {
+    background-color: var(--color-accent);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item .cta-accent:hover {
+    background-color: #5d422a;
+}
+
+.menu-item .cta-dark {
+    background-color: var(--color-dark);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item .cta-dark:hover {
+    background-color: #2e2424;
+}
+
+.menu-item .cta-link {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.menu-item .cta-link:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 6. CTA Banner (Happy Hours) --- */
+.cta-banner {
+    background-color: var(--color-accent);
+    padding: 4rem 0;
+    color: white;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.cta-content li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cta-content li strong {
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.cta-image {
+    text-align: center;
+}
+
+.cta-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.btn-cta-light {
+    background-color: white;
+    color: var(--color-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.btn-cta-light:hover {
+    background-color: var(--color-less-dark);
+    color: var(--color-light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 7. Footer --- */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    padding: 3rem 0;
+}
+
+.footer h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.review-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Very slight background */
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-accent);
+    transition: all 0.5s ease;
+}
+
+.review-card:hover{
+    border: 1px solid var(--color-light);
+
+}
+
+
+.review-card p {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.review-card .author {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links div {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .footer-links div {
+        flex-basis: auto;
+    }
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
