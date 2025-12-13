@@ -96,7 +96,7 @@ body {       font-family:       'Inter', sans-serif;
 
 /* --- 3. Hero Section --- */
 .hero {             position:            relative;
-                    height:              70vh; /* Responsive height */
+                    height:              70vh;
                     display:             flex;
                     align-items:         center;
                     background-image:    url("Coffeshop\ hero\ .jpg");
@@ -562,3 +562,4 @@ body {       font-family:       'Inter', sans-serif;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
 }
+
